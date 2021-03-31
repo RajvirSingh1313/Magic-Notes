@@ -1,0 +1,21 @@
+{
+    "name": "Magic Notes By Rajvir",
+    "short_name": "Magic Notes",
+    "start_url": "index.html",
+    "scope": "./",
+    "icons": [
+      {
+        "src": "logo.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "logo2.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#ffd31d",
+    "background_color": "#333",
+    "display": "standalone"
+  }

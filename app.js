@@ -11,7 +11,7 @@ let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function (e) {
     let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
-    let isImporant;
+    let isImporant = false;
     let notes = localStorage.getItem("notes");
     if (notes === null) {
         notesObj = [];

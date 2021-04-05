@@ -82,36 +82,36 @@ function showNotes() {
             </div>
             `
 
-                        }
-                        let notesElm = document.getElementById("notes");
-                        if (notesObj.length !== 0) {
-                            notesElm.innerHTML = html;
+        }
+        let notesElm = document.getElementById("notes");
+        if (notesObj.length !== 0) {
+            notesElm.innerHTML = html;
 
-                        }
-                    })
-                }
+        }
+    })
+}
 
-                // Function to delete a note
-                function deleteNote(index) {
-                    let notes = localStorage.getItem("notes");
-                    if (notes.length == null) {
-                        notesObj = [];
-                    }
-                    else {
-                        notesObj = JSON.parse(notes);
-                    }
-                    notesObj.splice(index, 1);
-                    localStorage.setItem("notes", JSON.stringify(notesObj));
-                    location.reload();
-                }
+// Function to delete a note
+function deleteNote(index) {
+    let notes = localStorage.getItem("notes");
+    if (notes.length == null) {
+        notesObj = [];
+    }
+    else {
+        notesObj = JSON.parse(notes);
+    }
+    notesObj.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(notesObj));
+    location.reload();
+}
 
-                let search = document.getElementById("searchTxt");
-                search.addEventListener("input", function (e) {
+let search = document.getElementById("searchTxt");
+search.addEventListener("input", function (e) {
 
-                    let inputVal = search.value.toLowerCase()
+    let inputVal = search.value.toLowerCase()
 
-                    let noteCards = document.getElementsByClassName("noteCard");
-                    Array.from(noteCards).forEach(function (element) {
+    let noteCards = document.getElementsByClassName("noteCard");
+    Array.from(noteCards).forEach(function (element) {
         let cardTxt = element.getElementsByTagName('p')[0].innerText.toLowerCase();
         if (cardTxt.includes(inputVal) || element.getElementsByTagName('h5')[0].innerText.toLocaleLowerCase().includes(inputVal)) {
             element.style.display = "block";
@@ -165,8 +165,8 @@ function importantNote(index) {
 }
 
 function editNotes(index) {
-    document.getElementById(index).parentElement.parentElement.children[1].innerHTML=`<input type='text' style="width:90%; margin-top:10px;" class="form-control" value=${document.getElementById(index).parentElement.parentElement.children[1].innerText}>`;
-    document.getElementById(index).parentElement.parentElement.children[2].innerHTML=`<input type='text' style="width:90%; margin-top:10px;" class="form-control" value=${document.getElementById(index).parentElement.parentElement.children[2].innerText}>`;
+    document.getElementById(index).parentElement.parentElement.children[1].innerHTML=`<input type='text' style="width:90%; margin-top:10px;" class="form-control" value="${document.getElementById(index).parentElement.parentElement.children[1].innerText}">`;
+    document.getElementById(index).parentElement.parentElement.children[2].innerHTML=`<input type='text' style="width:90%; margin-top:10px;" class="form-control" value="${document.getElementById(index).parentElement.parentElement.children[2].innerText}">`;
     document.getElementById(index).parentElement.parentElement.children[4].style.display = "initial";
 }
 
@@ -183,20 +183,21 @@ function saveEditNote(note) {
     else {
         notesObj = JSON.parse(notes);
     }
-    notesObj.forEach(function(element,index) {
+    notesObj.forEach(function (element, index) {
         if (document.getElementById(index).parentElement.children[0].children[0].id === title_input_id) {
-            document.getElementById(note).parentElement.children[1].innerHTML=``;
-            document.getElementById(note).parentElement.children[2].innerHTML=``;
+            document.getElementById(note).parentElement.children[1].innerHTML = ``;
+            document.getElementById(note).parentElement.children[2].innerHTML = ``;
 
             element[0] = edited_title;
             element[1] = edited_note;
 
-            document.getElementById(note).parentElement.children[1].innerText=edited_title;
-            document.getElementById(note).parentElement.children[2].innerText=edited_note;
+            document.getElementById(note).parentElement.children[1].innerText = edited_title;
+            document.getElementById(note).parentElement.children[2].innerText = edited_note;
 
             document.getElementById(note).parentElement.children[4].style.display = "none";
 
         }
     })
     localStorage.setItem("notes", JSON.stringify(notesObj));
+    showNotes();
 }

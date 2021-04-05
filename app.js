@@ -55,7 +55,7 @@ function showNotes() {
 
             <p class="card-text"> ${element[1]}</p>
             <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-light">Delete Note</button>
-            <button onclick="saveEditNote(this.id)" style="display:none;"class="btn btn-primary">Save Note</button>
+            <button id="invisible-button-${index}" onclick="saveEditNote(this.id)" style="display:none;"class="btn btn-primary">Save Note</button>
             </div>
             </div>
             `

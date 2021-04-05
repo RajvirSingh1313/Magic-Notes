@@ -168,6 +168,7 @@ function editNotes(index) {
     document.getElementById(index).parentElement.parentElement.children[1].innerHTML=`<input type='text' style="width:90%; margin-top:10px;" class="form-control" value="${document.getElementById(index).parentElement.parentElement.children[1].innerText}">`;
     document.getElementById(index).parentElement.parentElement.children[2].innerHTML=`<input type='text' style="width:90%; margin-top:10px;" class="form-control" value="${document.getElementById(index).parentElement.parentElement.children[2].innerText}">`;
     document.getElementById(index).parentElement.parentElement.children[4].style.display = "initial";
+    document.getElementById(index).parentElement.parentElement.children[0].children[1].style.display = "none";
 }
 
 function saveEditNote(note) {
@@ -195,7 +196,7 @@ function saveEditNote(note) {
             document.getElementById(note).parentElement.children[2].innerText = edited_note;
 
             document.getElementById(note).parentElement.children[4].style.display = "none";
-
+            document.getElementById(index).parentElement.parentElement.children[0].children[1].style.display = "none";
         }
     })
     localStorage.setItem("notes", JSON.stringify(notesObj));

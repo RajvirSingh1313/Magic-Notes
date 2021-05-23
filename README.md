@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://magic-notes-by-rajvir.netlify.app/" target="_blank">Magic Notes 📝</a></h1> 
+<h1 align="center"><a href="https://magic-notes-by-rajvir.vercel.app/" target="_blank">Magic Notes 📝</a></h1> 
 <img src="https://github.com/RajvirSingh1313/Magic-Notes/blob/master/public/banner.png"/>
 
 # Getting Started with Create React App

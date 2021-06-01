@@ -1,26 +1,40 @@
-import React from "react";
+// We have some ``a`` tags so we need to use Link to work with react-router-dom
 import { Link } from "react-router-dom";
 
 export default function NoteList({ notes, title }) {
+
+  // Delete handler for notes as we are also having a option for deleting,editing and marking note as important from home page without opening the note itself
   const handleDeleteNote = (id) =>{
+    // We are looping through the notes so if note.id matches the id which is provided to the function we will just use pop function to remove that note with index provided by the map function
     notes.forEach((note,index) => {
       if (note.id === id) {
         notes.pop(index)
+
+        // Updating localStorage
         localStorage.setItem("notes",JSON.stringify(notes))
+
+        // Reloading the home page
         window.location = "/";
       }
     })
   }
+
+  // Function for marking notes important or unimportant
   const handleMarkImportant = (id) =>{
+    // We will take the id of that note
+    // and we will loop through the notes if note's id matches the id we are provided with then we will check whether the note's important value is true or false if the value is true then we will change it to false vice-versa
     notes.forEach((note) => {
-      if (note.id === id) {
+      if (note.id ===  id) {
         if (note.important === false) {
           note.important = true;
         }
         else{
           note.important = false;
         }
+        // Saving the changes to the localStorage
         localStorage.setItem("notes",JSON.stringify(notes))
+
+        // Reloading the page
         window.location = "/";
       }
     })

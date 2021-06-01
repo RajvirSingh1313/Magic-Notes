@@ -1,7 +1,9 @@
+/* Adding tailwindcss */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Adding custom css directly to components classes */
 *{
   outline: none;
 }

@@ -1,3 +1,4 @@
+// Importing links as we have some links so we need to use ``Link`` instead of ``a``
 import { Link } from "react-router-dom";
 
 export default function Navbar() {

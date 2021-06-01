@@ -1,3 +1,6 @@
+<h1 align="center"><a href="https://magic-notes-by-rajvir.vercel.app/" target="_blank">Magic Notes 📝</a></h1> 
+<img src="https://github.com/RajvirSingh1313/Magic-Notes/blob/master/public/banner.png"/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

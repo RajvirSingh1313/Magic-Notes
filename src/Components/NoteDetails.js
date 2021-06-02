@@ -26,7 +26,7 @@ export default function NoteDetails() {
       {/* Here is loop with a if and else statement in it, it loops through all the notes and if the note's id matches the id that is provided in the url as parameter we get that note's title and body and put it into our html elements, else we show message to the user */}
       {notes.map((note) => {
         return note.id === id ? (
-          <article key={note.id} className="ml-20 mt-13">
+          <article key={note.id} className="sm:ml-20 sm:mt-13 ml-4 mt-2">
             <h2 className="text-5xl text-gray-600">{note.title}</h2>
             <p className="text-2xl mt-5 text-gray-500 font-medium">
               {note.body}

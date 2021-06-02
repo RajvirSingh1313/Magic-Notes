@@ -60,7 +60,7 @@ export default function EditNote() {
   };
 
   return (
-    <div className="create m-20">
+    <div className="create sm:m-20 m-6">
       <h2 className="text-3xl text-pink-500 font-medium">Add a New Note</h2>
       <form onSubmit={handleSave}>
         <input

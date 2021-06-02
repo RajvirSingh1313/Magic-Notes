@@ -41,11 +41,11 @@ export default function NoteList({ notes, title }) {
   }
   return (
     <div className="note-list">
-      <h2 className="text-3xl ml-20 font-medium text-pink-500">{title}</h2>
-      <div className="note-list flex flex-row h-60 ml-10 flex-wrap mr-10">
+      <h2 className="text-3xl sm:ml-20 ml-6 font-medium text-pink-500">{title}</h2>
+      <div className="note-list flex flex-row h-60 sm:ml-10 ml-2 flex-wrap mr-10">
         {notes.map((note) => (
           <div
-            className={(note.important === true)?"note-preview w-60 bg-pink-400 rounded ml-10 p-3 mt-10":"note-preview w-60 bg-white rounded ml-10 p-3 mt-10"}
+            className={(note.important === true)?"note-preview w-60 bg-pink-400 rounded sm:ml-10 ml-2 p-3 sm:mt-10 mt-2":"note-preview w-60 bg-white rounded sm:ml-10 ml-2 p-3 mt-10"}
             key={note.id}
           >
             <Link to={`/note/${note.id}`}>

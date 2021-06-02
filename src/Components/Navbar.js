@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <div>
       <nav className="navbar">
-        <div className="links flex mt-20 ml-20 mb-10">
+        <div className="links flex mt-4 ml-6 sm:mt-20 sm:ml-20 mb-10">
           <Link
             to="/"
             className="navbar-link text-4xl font-semibold text-gray-500"

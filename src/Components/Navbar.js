@@ -1,7 +1,11 @@
 // Importing links as we have some links so we need to use ``Link`` instead of ``a``
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
+  // State for managing the opacity of the link element for adding a note
+  const [touched,setTouched] = useState(false);
+
   return (
     <div>
       <nav className="navbar">
@@ -13,7 +17,8 @@ export default function Navbar() {
             <h1>Magic Notes</h1>
           </Link>
           {/* <input type="text" className="bg-white rounded h-5 m-1 shadow-lg ring-white focus:bg-gray-50 outline-none p-5 font-medium text-gray-700" /> */}
-          <Link to="/create" className="create-new-note navbar-link">
+          <Link to="/create" className="create-new-note navbar-link" style={{ opacity: touched ? 0.2 : 1, transition: 'opacity 100ms ease' }} onMouseDown={() => setTouched(true)}
+            onMouseUp={() => setTouched(false)}>
             <svg
               className="w-12 bg-pink-500 p-2 rounded ml-10 shadow-xl ring-white"
               version="1.0"

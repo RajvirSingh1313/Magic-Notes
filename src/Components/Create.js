@@ -1,5 +1,7 @@
 // Importing useState so we could update entries value when user will update it
 import { useState } from "react";
+// Importing React Natives exclusive opacity effect component
+import { TouchableOpacity } from "react-native";
 
 export default function Create() {
   // Initalizing variables for useState
@@ -46,7 +48,7 @@ export default function Create() {
         <textarea className="create-textarea shadow-xl rounded outline-none block bg-white p-1 border-pink-500 border-b-4 text-lg h-4/5 my-10" placeHolder="Description" required value={body} onChange={(e) => setBody(e.target.value)}></textarea>
 
         {/* Here we are checking isPending value every time it changes if it is changes to true then we change add button's text to ``Adding note...``  else we make it simple add button with some styles from tailwindcss*/}
-        {!isPending && <button className="shadow-xl rounded bg-pink-500 p-1 text-white text-lg" style={{outline:'none'}}>Add Note</button>}
+        {!isPending && <TouchableOpacity style={{position: "absolute" }}><button className="shadow-xl rounded bg-pink-500 p-1 text-white text-lg" style={{outline:'none'}}>Add Note</button></TouchableOpacity>}
         {isPending && <button disabled>Adding Note...</button>}
       </form>
     </div>

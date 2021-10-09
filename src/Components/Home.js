@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div className="home">
       {/* Here we are checking if there is no note is made by user we will simply shows a message to the user else we will shows the note by supplying the notes to the NoteList */}
-      {data[0].length !== 0?<NoteList notes={data[0]} title="All Notes"/>:<h2 className="text-xl m-20">You didn't made any note...</h2>}
+      {data[0].length !== 0?<NoteList notes={data[0]} title="All Notes"/>:<h2 className="text-xl m-20">You didn't make any notes...</h2>}
     </div>
   );
 }

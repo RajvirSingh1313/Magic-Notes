@@ -2,6 +2,8 @@
 import { useState } from "react";
 // Importing useParams for fetching the id as parameter from url so we could figure which note to edit
 import { useParams } from "react-router-dom";
+// Importing React Natives exclusive opacity effect component
+import { TouchableOpacity } from "react-native";
 
 export default function EditNote() {
   // Fetching id from url as parameter with help of useParams
@@ -81,12 +83,14 @@ export default function EditNote() {
         ></textarea>
 
         {!isPending && (
-          <button
-            className="shadow-xl rounded bg-pink-500 p-1 text-white text-lg"
-            style={{ outline: "none" }}
-          >
-            Save Note
-          </button>
+          <TouchableOpacity style={{position: "absolute" }}>
+            <button
+              className="shadow-xl rounded bg-pink-500 p-1 text-white text-lg"
+              style={{ outline: "none" }}
+            >
+              Save Note
+            </button>
+          </TouchableOpacity>
         )}
         {isPending && (
           <button

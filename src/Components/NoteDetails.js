@@ -2,6 +2,8 @@
 import { useParams } from "react-router";
 // Importing Links because we have some ``a`` links
 import { Link } from "react-router-dom";
+// Importing React Natives exclusive opacity effect component
+import { TouchableOpacity } from "react-native";
 
 export default function NoteDetails() {
   // Fetching the id parameter from the url with the help of the useParams
@@ -37,12 +39,14 @@ export default function NoteDetails() {
             >
               Edit
             </Link>
-            <button
-              className="bg-pink-500 p-1 rounded text-white text-lg mt-5 shadow-xl"
-              onClick={handleClick}
-            >
-              Delete
-            </button>
+            <TouchableOpacity style={{position: "absolute" }}>
+              <button
+                className="bg-pink-500 p-1 rounded text-white text-lg mt-5 shadow-xl"
+                onClick={handleClick}
+              >
+                Delete
+              </button>
+            </TouchableOpacity>
           </article>
         ) : (
           <div className="not-found ml-20">
